@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
+/** Signal Editorial appearance controller: persists the chosen theme and supports an optional shareable theme query. */
 type Theme = "light" | "dark";
 
 interface ThemeContextType {
@@ -23,6 +24,8 @@ export function ThemeProvider({
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(() => {
     if (switchable) {
+      const requestedTheme = new URLSearchParams(window.location.search).get("theme");
+      if (requestedTheme === "light" || requestedTheme === "dark") return requestedTheme;
       const stored = localStorage.getItem("theme");
       return (stored as Theme) || defaultTheme;
     }
@@ -39,6 +42,11 @@ export function ThemeProvider({
 
     if (switchable) {
       localStorage.setItem("theme", theme);
+      const url = new URL(window.location.href);
+      if (url.searchParams.has("theme")) {
+        url.searchParams.set("theme", theme);
+        window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+      }
     }
   }, [theme, switchable]);
 

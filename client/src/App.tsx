@@ -1,6 +1,6 @@
 /**
  * Signal Editorial design system: dark-first, editorial typography, calm blue signals.
- * This file keeps the site in its intentional dark presentation mode.
+ * This file enables a persisted dark/light presentation while retaining the same editorial identity.
  */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -23,7 +23,7 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="dark">
+      <ThemeProvider defaultTheme="dark" switchable>
         <TooltipProvider>
           <Toaster />
           <Router />

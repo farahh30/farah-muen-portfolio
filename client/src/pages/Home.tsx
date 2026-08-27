@@ -12,11 +12,14 @@ import {
   Linkedin,
   Mail,
   Menu,
+  Moon,
   Phone,
   Send,
   Sparkles,
+  Sun,
   X,
 } from "lucide-react";
+import { useTheme } from "@/contexts/ThemeContext";
 
 type Language = "en" | "ar";
 
@@ -248,11 +251,15 @@ function ArrowLink({ href, children, external = false }: { href: string; childre
 }
 
 export default function Home() {
+  const { theme, toggleTheme } = useTheme();
   const [language, setLanguage] = useState<Language>(() => new URLSearchParams(window.location.search).get("lang") === "ar" ? "ar" : "en");
   const [menuOpen, setMenuOpen] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", type: "UX/UI Design", message: "" });
   const t = content[language];
   const isArabic = language === "ar";
+  const isLight = theme === "light";
+  const themeLabel = isArabic ? (isLight ? "داكن" : "فاتح") : (isLight ? "Dark" : "Light");
+  const themeAction = isArabic ? (isLight ? "تفعيل الوضع الداكن" : "تفعيل الوضع الفاتح") : (isLight ? "Switch to dark mode" : "Switch to light mode");
 
   useEffect(() => {
     document.documentElement.lang = language;
@@ -282,7 +289,7 @@ export default function Home() {
   };
 
   return (
-    <div className={`site-shell ${isArabic ? "is-rtl" : ""}`} id="top" dir={isArabic ? "rtl" : "ltr"}>
+    <div className={`site-shell ${isArabic ? "is-rtl" : ""} ${isLight ? "is-light" : ""}`} id="top" dir={isArabic ? "rtl" : "ltr"}>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Farah Muen home" dir="ltr">
           <img className="wordmark__mark" src="/manus-storage/farah-signal-mark_05815943.png" alt="" />
@@ -296,6 +303,10 @@ export default function Home() {
         </nav>
 
         <div className="header-actions">
+          <button className="theme-switch" onClick={toggleTheme} aria-label={themeAction} title={themeAction}>
+            {isLight ? <Moon size={14} /> : <Sun size={14} />}
+            <span>{themeLabel}</span>
+          </button>
           <button className="language-switch" onClick={switchLanguage} aria-label={t.languageLabel}>{t.languageName}</button>
           <button className="header-contact" onClick={() => scrollTo("contact")}>
             {t.nav.contact} <ArrowUpRight size={15} />

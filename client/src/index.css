@@ -62,6 +62,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .desktop-nav button, .header-contact { background: transparent; color: #b7bed0; font-size: .68rem; letter-spacing: .04em; transition: color .2s ease; }
 .desktop-nav button:hover { color: #fff; }
 .header-actions { display: flex; align-items: center; gap: 20px; }
+.theme-switch { display: inline-flex; align-items: center; gap: 6px; padding: 6px 8px; border: 1px solid rgba(239,224,232,.22); color: #f5c4da; background: rgba(11,13,20,.38); font-size: .59rem; line-height: 1; transition: border-color .2s ease, background .2s ease, color .2s ease; }
+.theme-switch:hover { border-color: rgba(255,177,208,.76); color: #ffe0ed; background: rgba(244,90,156,.12); }
 .header-contact { display: inline-flex; align-items: center; gap: 6px; color: #f2f3f9; }
 .header-contact:hover { color: #ffadd1; }
 .mobile-menu-trigger { display: none; padding: 3px; color: #f5f6fb; background: transparent; }
@@ -277,6 +279,105 @@ h1 em, h2 em { color: #ffb1d0; font-style: italic; }
 .is-rtl .about-dossier__mark { direction: ltr; text-align: right; }
 .is-rtl .footer-links { justify-content: flex-start; }
 .is-rtl .footer-year { text-align: left; }
+
+/* Light Signal Editorial: a paper-like warm canvas, charcoal text, and the same deliberate rose signal. */
+.is-light { --background: #f7f3f5; --foreground: #1c1720; --card: #fffafb; --card-foreground: #1c1720; --muted: #ede7eb; --muted-foreground: #615764; --border: rgba(42,32,42,.15); --input: rgba(42,32,42,.17); background: #f7f3f5; color: #1c1720; }
+.is-light::before { opacity: .025; }
+.is-light .site-header { border-bottom-color: rgba(42,32,42,.13); }
+.is-light .wordmark, .is-light .wordmark em { color: #201923; }
+.is-light .desktop-nav button, .is-light .header-contact { color: #5b505e; }
+.is-light .desktop-nav button:hover, .is-light .header-contact:hover { color: #bd2e6c; }
+.is-light .theme-switch, .is-light .language-switch { border-color: rgba(73,54,68,.22); color: #7c3656; background: rgba(255,255,255,.44); }
+.is-light .theme-switch:hover, .is-light .language-switch:hover { border-color: #e36b9f; color: #ad285f; background: #fff1f6; }
+.is-light .hero { background: #f8f3f5; }
+.is-light .hero-atmosphere { opacity: .13; mix-blend-mode: multiply; }
+.is-light .hero::after { background: linear-gradient(90deg, rgba(249,245,247,.94) 0%, rgba(249,245,247,.69) 59%, rgba(249,245,247,.31) 100%), linear-gradient(0deg, rgba(249,245,247,.93) 0%, transparent 33%); }
+.is-light .hero-grid, .is-light .contact-grid { background-image: linear-gradient(rgba(66,45,64,.095) 1px, transparent 1px), linear-gradient(90deg, rgba(66,45,64,.095) 1px, transparent 1px); }
+.is-light .hero-orbit { border-color: rgba(217,75,141,.3); }
+.is-light .hero-orbit--two { border-color: rgba(155,85,118,.22); }
+.is-light .hero-topline, .is-light .hero-foot { color: #6e6170; }
+.is-light .hero h1, .is-light .heading-row h2, .is-light .process-intro h2, .is-light .about-copy h2, .is-light .contact-copy h2, .is-light .project-card h3, .is-light .service-row__title h3, .is-light .process-list h3 { color: #211a24; }
+.is-light h1 em, .is-light h2 em { color: #bd2e6c; }
+.is-light .eyebrow, .is-light .project-card__type { color: #786878; }
+.is-light .hero-description { color: #4f4451; }
+.is-light .button--quiet { color: #362c38; border-color: rgba(71,53,67,.32); background: rgba(255,255,255,.36); }
+.is-light .button--quiet:hover { color: #aa265e; border-color: #e877a6; }
+.is-light .portrait-frame { border-color: rgba(69,50,68,.31); background: #dad4d8; box-shadow: 21px 25px 0 rgba(217,75,141,.12); }
+.is-light .portrait-meta { color: #705e6d; }
+.is-light .portrait-meta--bottom { color: #8f4a69; }
+.is-light .hero-foot a { color: #342b37; }
+.is-light .hero-foot a:hover { color: #b32c64; }
+.is-light .ticker { color: #8e365e; border-color: rgba(62,45,60,.16); background: #f0e9ed; }
+.is-light .section { border-bottom-color: rgba(61,46,61,.16); }
+.is-light .work-section { background: #fbf8f9; }
+.is-light .services-section { background: #f1eaee; }
+.is-light .process-section { background: #fbf8f9; }
+.is-light .about-section { background: #f3edf0; }
+.is-light .section-rail { border-right-color: rgba(80,55,76,.18); }
+.is-light .section-rail::after { box-shadow: 0 0 0 5px #fbf8f9, 0 0 16px rgba(244,90,156,.65); }
+.is-light .services-section .section-rail::after { box-shadow: 0 0 0 5px #f1eaee, 0 0 16px rgba(244,90,156,.65); }
+.is-light .about-section .section-rail::after { box-shadow: 0 0 0 5px #f3edf0, 0 0 16px rgba(244,90,156,.65); }
+.is-light .section-label { color: #776878; }
+.is-light .heading-row > p, .is-light .process-intro p { color: #655866; }
+.is-light .project-card { border-color: rgba(61,46,61,.17); background: #fffafb; }
+.is-light .project-card__image-wrap { border-right-color: rgba(61,46,61,.17); background: #f0e6eb; }
+.is-light .project-card__grid { background-image: linear-gradient(rgba(103,71,96,.13) 1px, transparent 1px), linear-gradient(90deg, rgba(103,71,96,.13) 1px, transparent 1px); }
+.is-light .project-card__index { color: #fff8fb; border-color: rgba(217,75,141,.53); background: rgba(65,41,59,.8); }
+.is-light .project-card__visit { color: #fff9fb; background: rgba(57,36,52,.82); border-color: rgba(255,255,255,.3); }
+.is-light .project-annotation { color: #8b385d; }
+.is-light .project-annotation--side { color: #7e6876; }
+.is-light .project-annotation--bottom { color: #735969; }
+.is-light .project-card__lead { color: #5c4e5c; }
+.is-light .project-card__description { color: #514351; }
+.is-light .project-facts { border-color: rgba(61,46,61,.16); }
+.is-light .project-facts span, .is-light .about-metadata span { color: #867887; }
+.is-light .project-facts b, .is-light .about-metadata b { color: #332a35; }
+.is-light .project-highlights { color: #5d5060; }
+.is-light .text-link { color: #b32c64; }
+.is-light .text-link:hover { color: #7d1440; }
+.is-light .service-list, .is-light .service-row { border-color: rgba(61,46,61,.16); }
+.is-light .service-row:hover { background: linear-gradient(90deg, rgba(244,90,156,.10), transparent 50%); }
+.is-light .service-row p { color: #655867; }
+.is-light .service-row__tags span { border-color: rgba(73,54,68,.18); color: #745f70; background: rgba(255,255,255,.25); }
+.is-light .services-headline span { color: #97617a; }
+.is-light .services-note { color: #5c4a58; }
+.is-light .process-intro img { border-color: rgba(61,46,61,.2); opacity: .58; }
+.is-light .process-list { border-color: rgba(61,46,61,.18); }
+.is-light .process-list li { border-right-color: rgba(61,46,61,.16); }
+.is-light .process-list li::before { box-shadow: 0 0 0 4px #fbf8f9; }
+.is-light .process-list p { color: #6a5c69; }
+.is-light .tool-strip { color: #7b6b79; }
+.is-light .tool-strip > span { color: #5a4a59; }
+.is-light .about-dossier { border-color: rgba(61,46,61,.18); background: #fffafb; }
+.is-light .about-dossier::before { border-color: rgba(217,75,141,.38); }
+.is-light .about-dossier__head, .is-light .about-dossier__facts { color: #6d5c6b; }
+.is-light .about-dossier__mark { color: #251c27; }
+.is-light .about-dossier__quote { color: #493c49; }
+.is-light .about-dossier__facts { border-top-color: rgba(61,46,61,.16); }
+.is-light .about-copy p { color: #5c4e5e; }
+.is-light .about-copy__intro { color: #332834 !important; }
+.is-light .principles span { background: #fff8fb; border-color: rgba(217,75,141,.4); color: #9a2f5d; }
+.is-light .contact-section { background: #fff6f9; }
+.is-light .contact-section::after { background: linear-gradient(90deg, rgba(255,248,250,.95), rgba(255,248,250,.71) 60%, rgba(255,248,250,.91)); }
+.is-light .contact-atmosphere { opacity: .12; mix-blend-mode: multiply; }
+.is-light .contact-copy .eyebrow { color: #a23160; }
+.is-light .contact-copy > p:not(.eyebrow) { color: #5e4e5c; }
+.is-light .contact-direct a { color: #4c3d4b; }
+.is-light .contact-direct a:hover { color: #b72c66; }
+.is-light .contact-form { border-color: rgba(61,46,61,.18); background: rgba(255,253,254,.82); }
+.is-light .contact-form label > span { color: #716071; }
+.is-light .contact-form input, .is-light .contact-form textarea, .is-light .contact-form select { color: #2f2530; border-bottom-color: rgba(61,46,61,.24); }
+.is-light .contact-form input::placeholder, .is-light .contact-form textarea::placeholder { color: #9a8b98; }
+.is-light .contact-form select option { color: #211b22; }
+.is-light .contact-form > p { color: #786878; }
+.is-light .site-footer { background: #eee7eb; }
+.is-light .site-footer p { color: #5d4d5b; }
+.is-light .footer-links a { color: #6a5868; }
+.is-light .footer-links a:hover { color: #aa285e; }
+.is-light .footer-year { color: #8a7988; }
+.is-light.is-rtl .section-rail { border-left-color: rgba(80,55,76,.18); border-right: 0; }
+.is-light.is-rtl .service-row:hover { background: linear-gradient(270deg, rgba(244,90,156,.10), transparent 50%); }
+
 
 @media (max-width: 980px) {
   .section { grid-template-columns: 1fr; gap: 43px; }
