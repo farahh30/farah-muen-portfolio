@@ -292,7 +292,7 @@ export default function Home() {
     <div className={`site-shell ${isArabic ? "is-rtl" : ""} ${isLight ? "is-light" : ""}`} id="top" dir={isArabic ? "rtl" : "ltr"}>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Farah Muen home" dir="ltr">
-          <img className="wordmark__mark" src="/manus-storage/farah-signal-mark_05815943.png" alt="" />
+          <img className="wordmark__mark" src="/images/farah-signal-mark.webp" alt="" />
           <span>Farah</span> <em>Muen</em><i aria-hidden="true" />
         </a>
 
@@ -329,7 +329,7 @@ export default function Home() {
 
       <main>
         <section className="hero" aria-labelledby="hero-title">
-          <img className="hero-atmosphere" src="/manus-storage/farah-signal-hero_d4c2c56b.png" alt="" />
+          <img className="hero-atmosphere" src="/images/farah-signal-hero.webp" alt="" />
           <div className="hero-grid" aria-hidden="true" />
           <div className="hero-orbit hero-orbit--one" aria-hidden="true" />
           <div className="hero-orbit hero-orbit--two" aria-hidden="true" />
@@ -356,7 +356,7 @@ export default function Home() {
               <div className="hero-portrait-wrap reveal reveal--delay-3">
                 <div className="portrait-meta portrait-meta--top">{t.hero.portraitTop[0]}<br />{t.hero.portraitTop[1]}</div>
                 <div className="portrait-frame">
-                  <img src="/manus-storage/farah-muen-portrait_44c29263.jpeg" alt="Farah Muen, UX/UI Designer" />
+                  <img src="/images/farah-muen-portrait.webp" alt="Farah Muen, UX/UI Designer" />
                   <div className="portrait-scan" aria-hidden="true" />
                 </div>
                 <div className="portrait-meta portrait-meta--bottom"><span>F.M.</span><span>{t.hero.portraitBottom}</span></div>
@@ -391,7 +391,7 @@ export default function Home() {
                 <span className="project-annotation project-annotation--top">{t.work.evidence}</span>
                 <span className="project-annotation project-annotation--side">{t.work.flow}</span>
                 <div className="project-card__product-frame">
-                  <img src="/manus-storage/medivo-cover_8bc0150e.webp" alt="Medivo doctor appointment booking project screens" className="project-card__image" />
+                  <img src="/images/medivo-cover.webp" alt="Medivo doctor appointment booking project screens" className="project-card__image" />
                 </div>
                 <span className="project-annotation project-annotation--bottom">{t.work.imageCaption}</span>
                 <a href={projectUrl} target="_blank" rel="noreferrer" className="project-card__visit">{t.work.behance} <ExternalLink size={15} /></a>
@@ -444,7 +444,7 @@ export default function Home() {
                 <h2>{t.process.title[0]}<br /><em>{t.process.title[1]}</em></h2>
                 <p>{t.process.introduction}</p>
               </div>
-              <img src="/manus-storage/farah-process-atlas_8ed2826f.png" alt={t.process.imageAlt} />
+              <img src="/images/farah-process-atlas.webp" alt={t.process.imageAlt} />
             </div>
             <ol className="process-list">
               {t.process.items.map(([number, title, description]) => <li key={number}><span className="process-list__number">{number}</span><h3>{title}</h3><p>{description}</p></li>)}
@@ -475,7 +475,7 @@ export default function Home() {
         </section>
 
         <section className="contact-section" id="contact">
-          <img className="contact-atmosphere" src="/manus-storage/farah-contact-orbit_c4e5130b.png" alt="" />
+          <img className="contact-atmosphere" src="/images/farah-contact-orbit.webp" alt="" />
           <div className="contact-grid" aria-hidden="true" />
           <div className="contact-inner">
             <SectionLabel number="05">{t.contact.label}</SectionLabel>
@@ -503,7 +503,7 @@ export default function Home() {
       </main>
 
       <footer className="site-footer">
-        <a className="wordmark" href="#top" dir="ltr"><img className="wordmark__mark" src="/manus-storage/farah-signal-mark_05815943.png" alt="" /><span>Farah</span> <em>Muen</em><i aria-hidden="true" /></a>
+        <a className="wordmark" href="#top" dir="ltr"><img className="wordmark__mark" src="/images/farah-signal-mark.webp" alt="" /><span>Farah</span> <em>Muen</em><i aria-hidden="true" /></a>
         <p>{t.footer}</p>
         <div className="footer-links"><a href={behanceUrl} target="_blank" rel="noreferrer">Behance <ArrowUpRight size={13} /></a><a href={linkedinUrl} target="_blank" rel="noreferrer"><Linkedin size={13} /> LinkedIn</a><a href="mailto:farahmuen@gmail.com">{t.contact.email} <Mail size={13} /></a></div>
         <span className="footer-year">© {new Date().getFullYear()} Farah Muen</span>
