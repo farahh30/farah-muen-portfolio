@@ -1,8 +1,9 @@
 /*
  * Signal Editorial visual language: dark blue-black canvas, restrained periwinkle signals,
- * Newsreader for reflective editorial moments and JetBrains Mono for structured UI language.
+ * Newsreader for reflective English editorial moments, JetBrains Mono for structure,
+ * and IBM Plex Sans Arabic with Jomhuria for the Arabic reading and display system.
  */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Noto+Naskh+Arabic:wght@400;600&family=Noto+Sans+Arabic:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Jomhuria&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -255,14 +256,17 @@ h1 em, h2 em { color: #ffb1d0; font-style: italic; }
 .reveal--delay-1 { animation-delay: .08s; }.reveal--delay-2 { animation-delay: .16s; }.reveal--delay-3 { animation-delay: .25s; }.reveal--delay-4 { animation-delay: .34s; }
 @keyframes rise { to { opacity: 1; transform: translateY(0); } }
 
-/* Bilingual Signal Editorial: Arabic mirrors the layout and swaps to a high-legibility Arabic type pairing. */
+/* Bilingual Signal Editorial: Arabic mirrors the layout with IBM Plex Sans Arabic for reading and Jomhuria for display. */
 .language-switch { min-width: 43px; padding: 6px 8px; border: 1px solid rgba(239,224,232,.22); color: #f5c4da; background: rgba(11,13,20,.38); font-size: .59rem; line-height: 1; transition: border-color .2s ease, background .2s ease, color .2s ease; }
 .language-switch:hover { border-color: rgba(255,177,208,.76); color: #ffe0ed; background: rgba(244,90,156,.12); }
-.is-rtl { font-family: "Noto Sans Arabic", sans-serif; }
+.is-rtl { font-family: "IBM Plex Sans Arabic", sans-serif; font-weight: 400; }
 .is-rtl .wordmark, .is-rtl .footer-links, .is-rtl .footer-year { font-family: "JetBrains Mono", monospace; }
-.is-rtl h1, .is-rtl h2, .is-rtl h3, .is-rtl .services-note, .is-rtl .about-copy__intro, .is-rtl .project-card__description, .is-rtl .process-intro p, .is-rtl .contact-copy > p:not(.eyebrow), .is-rtl .about-dossier__quote { font-family: "Noto Naskh Arabic", serif; letter-spacing: 0; }
-.is-rtl h1 { line-height: .94; }
-.is-rtl h2 { line-height: 1.06; }
+.is-rtl h1, .is-rtl h2, .is-rtl h3, .is-rtl .about-dossier__quote { font-family: "Jomhuria", serif; font-weight: 400; letter-spacing: .01em; }
+.is-rtl h1 { font-size: clamp(5.1rem, 9vw, 10.4rem); line-height: .71; }
+.is-rtl h2 { line-height: .81; }
+.is-rtl h3 { line-height: .86; }
+.is-rtl .services-note, .is-rtl .about-copy__intro { font-family: "Jomhuria", serif; font-weight: 400; line-height: .88; letter-spacing: .01em; }
+.is-rtl .project-card__description, .is-rtl .process-intro p, .is-rtl .contact-copy > p:not(.eyebrow) { font-family: "IBM Plex Sans Arabic", sans-serif; }
 .is-rtl .hero-description, .is-rtl .heading-row > p, .is-rtl .service-row p, .is-rtl .about-copy p, .is-rtl .contact-copy > p:not(.eyebrow), .is-rtl .project-card__description { letter-spacing: 0; }
 .is-rtl .hero-topline, .is-rtl .hero-foot { font-size: .66rem; letter-spacing: 0; text-transform: none; }
 .is-rtl .eyebrow, .is-rtl .project-card__type, .is-rtl .section-label, .is-rtl .tool-strip > span, .is-rtl .about-dossier__head, .is-rtl .about-dossier__facts, .is-rtl .contact-form label > span { letter-spacing: 0; text-transform: none; }
@@ -279,6 +283,12 @@ h1 em, h2 em { color: #ffb1d0; font-style: italic; }
 .is-rtl .about-dossier__mark { direction: ltr; text-align: right; }
 .is-rtl .footer-links { justify-content: flex-start; }
 .is-rtl .footer-year { text-align: left; }
+
+@media (max-width: 720px) {
+  .is-rtl h1 { font-size: clamp(5rem, 22vw, 7.2rem); line-height: .73; }
+  .is-rtl h2 { line-height: .84; }
+  .is-rtl .services-note, .is-rtl .about-copy__intro { line-height: .92; }
+}
 
 /* Light Signal Editorial: a paper-like warm canvas, charcoal text, and the same deliberate rose signal. */
 .is-light { --background: #f7f3f5; --foreground: #1c1720; --card: #fffafb; --card-foreground: #1c1720; --muted: #ede7eb; --muted-foreground: #615764; --border: rgba(42,32,42,.15); --input: rgba(42,32,42,.17); background: #f7f3f5; color: #1c1720; }
